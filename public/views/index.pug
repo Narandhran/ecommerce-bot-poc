@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+    head
+        title= pageTitle
+        style
+            include ./style.css
+        script(type='text/javascript' src='/public/views/script.js')
+    body
+        h3 Stores nearby your enetered location
+        #map
+        script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2' async)
