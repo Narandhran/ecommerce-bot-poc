@@ -1,18 +1,19 @@
 const Contact = require('../controllers/Contactus');
 const Category = require('../controllers/Category');
-const Order = require("../controllers/Order")
-module.exports = app => {
+const Order = require("../controllers/Order");
+const express = require('express');
+const contactRouter = express.Router();
+
 
     //===========CONTACT US==============//
-    app.get('/contactus/fetch_all', Contact.fetchAll);
-    app.post('/contactus/create' , Contact.AddContact);
+    contactRouter.get('/contactus/fetch_all', Contact.fetchAll);
+    contactRouter.post('/contactus/create' , Contact.AddContact);
 
     //==============CATEGORY=============//
-    app.get('/category/fetch_all', Category.fetchAll);
-    app.post('/category/create' , Category.AddCategory);
+    contactRouter.get('/category/fetch_all', Category.fetchAll);
+    contactRouter.post('/category/create' , Category.AddCategory);
 
     //==============ORDER===============//
-    app.post('/track_order',Order.fetchAll)
+    contactRouter.get('/track_order',Order.fetchAll)
 
-
-}
+module.exports = contactRouter;

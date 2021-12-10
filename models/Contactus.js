@@ -9,7 +9,7 @@ const contactSchema = new Schema({
     required: true
   },
   mobile_no: {
-    type: Integer,
+    type: String,
     required: true
   },
   query: {
