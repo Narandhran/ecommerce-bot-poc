@@ -9,6 +9,8 @@ var config = require('./config/index')[process.env.NODE_ENV];
 var normalizedPath = require('path').join(__dirname, 'routes');
 
 app
+    .set('views', './public/views')
+    .set('view engine', 'pug')
     .use(cors())
     .use(json({ limit: '3mb', extended: true }))
     .use(urlencoded({ limit: '3mb', extended: true }))
@@ -33,4 +35,8 @@ app
             console.log(`Server is listening on port ${config.SERVER_PORT}`);
         });
     });
+
+app.get('/view_map', (req, res) => {
+    res.render('index');
+})
 module.exports = app;
