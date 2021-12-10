@@ -4,7 +4,6 @@ const Order = require("../controllers/Order");
 const express = require('express');
 const contactRouter = express.Router();
 
-
     //===========CONTACT US==============//
     contactRouter.get('/contactus/fetch_all', Contact.fetchAll);
     contactRouter.post('/contactus/create' , Contact.AddContact);
