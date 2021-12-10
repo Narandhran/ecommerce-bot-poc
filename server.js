@@ -10,6 +10,8 @@ var normalizedPath = require('path').join(__dirname, 'routes');
 var botRoutes = require("./routes/index");
 const contactRouter = require('./routes/index');
 app
+    .set('views', './public/views')
+    .set('view engine', 'pug')
     .use(cors())
     .use(json({ limit: '3mb', extended: true }))
     .use(urlencoded({ limit: '3mb', extended: true }))
@@ -37,4 +39,8 @@ app
 
     });
     app.use('/routes',contactRouter)
+
+app.get('/view_map', (req, res) => {
+    res.render('index');
+})
 module.exports = app;
