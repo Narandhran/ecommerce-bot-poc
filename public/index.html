@@ -24,12 +24,10 @@
       // receives the initial focus when tab is pressed. Use arrow keys to
       // move between markers; press tab again to cycle through the map controls.
       const tourStops = [
-        [{ lat: 34.8791806, lng: -111.8265049 }, "Boynton Pass"],
-        [{ lat: 34.8559195, lng: -111.7988186 }, "Airport Mesa"],
-        [{ lat: 34.832149, lng: -111.7695277 }, "Chapel of the Holy Cross"],
-        [{ lat: 34.823736, lng: -111.8001857 }, "Red Rock Crossing"],
-        [{ lat: 34.800326, lng: -111.7665047 }, "Bell Rock"],
-      ];
+        [{ lat: 12.929247311519006, lng: 80.13845561647003 }, "Store A"],
+        [{ lat: 12.919710501478294, lng: 80.11618255187656 }, "Store B"],
+        [{ lat: 12.92657034898622, lng: 80.12124656213346 }, "Store C"],
+      ]
       // Create an info window to share between markers.
       const infoWindow = new google.maps.InfoWindow();
 
@@ -61,8 +59,7 @@
   <div id="map"></div>
 
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2"
+  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly&channel=2"
     async></script>
 </body>
 

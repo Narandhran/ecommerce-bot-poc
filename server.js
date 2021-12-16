@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { json, urlencoded } = require('body-parser');
 const { connectivity } = require('./config/db');
+
 const app = express();
 const dotenv = require('dotenv').config();
 var config = require('./config/index')[process.env.NODE_ENV];
@@ -36,7 +37,4 @@ app
         });
     });
 
-app.get('/view_map', (req, res) => {
-    res.render('index');
-})
 module.exports = app;

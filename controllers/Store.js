@@ -1,5 +1,6 @@
 const { Store } = require('../models/store');
 const { successHandler, errorHandler } = require('../utils/handler');
+const jsStringify = require('js-stringify');
 
 
 module.exports = {
@@ -15,5 +16,15 @@ module.exports = {
             if (err) errorHandler(req, res, err);
             else successHandler(req, res, 'Store listed successfully', result);
         })
+    },
+    viewMapByPin: async (req, res) => {
+        let { pincode } = req.params;
+        let stores = await Store.find({ pincode }, 'location store');
+        let data= [];
+        await stores.forEach(e => {
+            data.push([{ lat: e.location.coordinates[0], lng: e.location.coordinates[1] }, e.store])
+        })
+
+        res.render('index', { jsStringify, data });
     }
 }
