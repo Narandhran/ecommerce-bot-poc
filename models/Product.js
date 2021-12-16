@@ -21,7 +21,7 @@ const productSchema = new Schema({
         type: String
     },
     price: {
-        type: String
+        type: Number
     }
 }, { timestamps: true, collection: 'product' });
 
