@@ -14,5 +14,7 @@ const contactRouter = express.Router();
 
     //==============ORDER===============//
     contactRouter.get('/track_order',Order.fetchAll)
+    contactRouter.get('/order/all' ,Order.orderAll )
+    contactRouter.get('/order_detail/:order_id' , Order.orderById)
 
 module.exports = contactRouter;
