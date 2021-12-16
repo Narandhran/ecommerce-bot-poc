@@ -4,7 +4,10 @@ html(lang="en")
         title= pageTitle
         style
             include ./style.css
-        script(type='text/javascript' src='/public/views/script.js')
+        script.
+            const data = !{jsStringify(data)};
+        script
+            include ./script.js
     body
         h3 Stores nearby your enetered location
         #map

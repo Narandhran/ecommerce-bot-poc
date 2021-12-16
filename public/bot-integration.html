@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="http://localhost:3000/assets/modules/channel-web/inject.js"></script>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bot testing</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    Hi hello
+</body>
+<script>
+    window.botpressWebChat.init({ host: 'http://localhost:3000', botId: 'e-commerce', hideWidget: false })
+    window.addEventListener('message', function(event) {
+      if (event.data.name === 'webchatReady') {
+        window.botpressWebChat.sendEvent({
+          type: 'proactive-trigger',
+          channel: 'web',
+          payload: { text: 'Home' }
+        })
+      }
+    })
+</script>
+
+</html>
