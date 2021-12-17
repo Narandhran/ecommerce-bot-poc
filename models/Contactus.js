@@ -15,9 +15,9 @@ const contactSchema = new Schema({
   query: {
     type: String
   },
-  category:
-    [{ type: Schema.ObjectId, ref: 'Category' }]
-  
+  category: {
+    type: String
+  }
 }, { timestamps: true, collection: 'contactus' });
 
 var Contact = model('contactSchema', contactSchema);
