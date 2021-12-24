@@ -1,4 +1,4 @@
-const { Store } = require('../models/store');
+const { Store } = require('../models/Store');
 const { successHandler, errorHandler } = require('../utils/handler');
 const jsStringify = require('js-stringify');
 

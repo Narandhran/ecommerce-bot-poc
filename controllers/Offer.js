@@ -1,4 +1,4 @@
-const { Offer } = require('../models/offer');
+const { Offer } = require('../models/Offer');
 const { successHandler, errorHandler } = require('../utils/handler');
 
 module.exports = {

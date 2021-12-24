@@ -5,7 +5,7 @@ var database = {
         mongoose.set('debug', true);
         mongoose.Promise = global.Promise;
         mongoose.connect(`mongodb://${config.DB_HOST}:${config.DB_PORT}/${config.DB_NAME}`,
-            { useUnifiedTopology: true, useNewUrlParser: true });
+            { useNewUrlParser: true });
         const db = mongoose.connection;
         return db;
     }

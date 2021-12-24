@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app: 
+    container_name: bp-node-ecommerce
+    restart: always
+    build: .
+    image: bp-node-ecommerce
+    ports:
+      - "3005:3005"
+    links:
+      - mongo
+  
+  mongo:
+    image: mongo
+    volumes:
+      - /data/mongodb/db:/data/db
+    ports:
+      - "27017:27017"

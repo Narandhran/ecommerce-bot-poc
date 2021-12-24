@@ -6,6 +6,7 @@ const { connectivity } = require('./config/db');
 const app = express();
 const dotenv = require('dotenv').config();
 var config = require('./config/index')[process.env.NODE_ENV];
+const { insertDataIfEmpty } = require('./data');
 
 var normalizedPath = require('path').join(__dirname, 'routes');
 app
@@ -27,12 +28,13 @@ app
             process.exit(1);
         });
         get_connection.once('open', () => {
+            insertDataIfEmpty();
             require('fs')
                 .readdirSync(normalizedPath)
                 .forEach(file => {
                     require('./routes/' + file)(app);
                 });
-            console.log(`Server is listening on port ${config.SERVER_PORT}`);
+            console.log(`DB is connected successfully`);
         });
         console.log(`Server is listening on port ${config.SERVER_PORT}`);
 
